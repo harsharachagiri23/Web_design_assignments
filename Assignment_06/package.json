@@ -1,0 +1,22 @@
+{
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.19.2",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "express-validator": "^5.3.1",
+    "mongoose": "^6.2.8",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.15",
+    "password-validator": "^5.2.1"
+  },
+  "name": "assignment_06",
+  "version": "1.0.0",
+  "description": "Assignment 06",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon run app.js"
+  },
+  "author": "Harsha Vardhini",
+  "license": "ISC"
+}

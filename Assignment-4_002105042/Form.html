@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <title>Feedback</title>
+  <style>
+    label {	float: left;
+			width: 150px;}
+      #container{
+          width: 1200;
+          margin: auto;
+          background-color: beige;
+      } 
+      main{
+          padding: 30px 500px;
+      }
+
+	  #myblueTable {
+            border: 2px solid blue;
+            border-collapse: collapse;
+            margin: 30px 10px 20px 40px;
+        }
+
+        #myblueTable td,
+        th {
+            border: 1px solid blue;
+            padding: 5px;
+        }
+
+        #myblueTable th {
+            color: #fff;
+            background-color: rgb(88, 98, 240);
+        }
+
+        #myblueTable td {
+            padding: 5px;
+        }
+		#tablediv{
+			padding-left: 90px;
+		}
+
+  </style>
+ </head>
+ <body>
+ <div id="container">
+	 
+	 <main>
+	 <h2>Feeback</h2>
+	 <h3>Love something? Hate something? Let us know!</h3>
+		 Note : Fields marked with an asterisk(*) are mandatory
+		 <br><br>
+		 <form method="post" id="requestForm" novalidate  >
+			<label>Title*:</label>
+			<input type="radio" name="title" id="miss" value="miss" required="required" onblur="validateTitle()" onfocus="undoDiv(this,'errorMsgTitle','errorMsgTitle')"/>Miss
+			<input type="radio" name="title" id="mr" value="mr" required="required" onblur="validateTitle()" onfocus="undoDiv(this,'errorMsgTitle','errorMsgTitle')"/>Mr.
+			<input type="radio" name="title" id="mrs" value="mrs" required="required" onblur="validateTitle()" onfocus="undoDiv(this,'errorMsgTitle','errorMsgTitle')"/>Mrs.
+			<br><br>
+			<!-- <div id="errorMsgTitleEmchk" class="validationDivEmchk" style="display: none; color: red;">
+                Please Provide Title.
+				<br><br>
+            </div> -->
+			<div id="errorMsgTitle" style="display: none; color: red;">
+                Please Choose Any Title.
+				<br><br>
+            </div>
+
+
+			<label for="firstName">First Name*:</label>
+			<input type="text" class="validation" name="firstName" id="firstName" placeholder="First Name" required="required" onblur="validate(this,'firstName','errorMsgFname')" onfocus="undoDiv(this,'errorMsgFname','errorMsgFnameEmchk')"/>	
+			<br><br>
+			<div id="errorMsgFnameEmchk" class="validationDivEmchk" style="display: none; color: red;">
+                First Name is Required.
+				<br><br>
+            </div>
+			<div id="errorMsgFname" class="validationDiv" style="display: none; color: red;">
+                Invalid input for the First Name. Only Text is Allowed.
+				<br><br>
+            </div>
+			
+			
+
+			<label for="lastName">Last Name*:</label>
+			<input type="text" class="validation" name="lastName" id="lastName" placeholder="Last Name" required="required" onblur="validate(this,'lastName','errorMsgLname')" onfocus="undoDiv(this,'errorMsgLname','errorMsgLnameEmchk')"/>
+			<br><br>
+			<div id="errorMsgLnameEmchk" class="validationDivEmchk" style="display: none; color: red;">
+                Last Name is Required.
+				<br><br>
+            </div>
+			<div id="errorMsgLname" class="validationDiv" style="display: none; color: red;">
+                Invalid input for the Last Name. Only Text is Allowed.
+				<br><br>
+            </div>
+			
+
+			<label for="emailId">Email Id*:</label>
+			<input type="text"  class="validation" name="emailId" id="emailId" placeholder="yourname@domain.com" required="required" onblur="validate(this,'emailId','errorMsgEmailId')" onfocus="undoDiv(this,'errorMsgEmailId','errorMsgEmailIdEmchk')"/>
+			<br><br>
+			<div id="errorMsgEmailIdEmchk" class="validationDivEmchk" style="display: none; color: red;">
+                Please Provide Email Id.
+				<br><br>
+            </div>
+			<div id="errorMsgEmailId" class="validationDiv" style="display: none; color: red;">
+                Invalid input for the Email Id. Please Enter Only Northeastern Email Id.
+				<br><br>
+            </div>
+			
+
+			<label for="phoneNumber">Phone Number*:</label>
+			<input type="text" class="validation" name="phoneNumber" id="phoneNumber" placeholder="xxx-xxx-xxxx" required="required" onblur="validate(this,'phoneNumber','errorMsgPhone')" onfocus="undoDiv(this,'errorMsgPhone','errorMsgPhoneEmchk')"/>
+			<br><br>
+			<div id="errorMsgPhoneEmchk" class="validationDivEmchk" style="display: none; color: red;">
+                Please Provide Phone Number.
+				<br><br>
+            </div>
+			<div id="errorMsgPhone" class="validationDiv" style="display: none; color: red;">
+                Invalid input for the Phone Number. Please Enter valid Phone Number.
+				<br><br>
+            </div>
+
+			<label for="streetAddress1">Street Address 1*:</label>
+			<input type="text" class="validation" name="streetAddress1" id="streetAddress1" placeholder="address" required="required" onblur="validate(this,'streetAddress1','errorMsgStAd')" onfocus="undoDiv(this,'errorMsgStAd','errorMsgStAdEmchk')"/>
+			<br><br>
+			<div id="errorMsgStAdEmchk" class="validationDivEmchk" style="display: none; color: red;">
+                Address is Required.
+				<br><br>
+            </div>
+			<div id="errorMsgStAd" class="validationDiv" style="display: none; color: red;">
+                Please Enter valid Street Address.
+				<br><br>
+            </div>
+
+			<label for="streetAddress2">Street Address 2:</label>
+			<input type="text" name="streetAddress2" id="streetAddress2" placeholder="address" />
+			<br><br>
+			
+
+			<label for="city">City*:</label>
+			<input type="text" class="validation" name="city" id="city" placeholder="city" required="required" onblur="validate(this,'city','errorMsgCity')" onfocus="undoDiv(this,'errorMsgCity','errorMsgCityEmchk')" />
+			<br><br>
+			<div id="errorMsgCityEmchk" class="validationDivEmchk" style="display: none; color: red;">
+                Please Provide City Name.
+				<br><br>
+            </div>
+			<div id="errorMsgCity" class="validationDiv" style="display: none; color: red;">
+                Please Enter valid City Name.
+				<br><br>
+            </div>
+
+			<label for="state">State*:</label>
+			<input type="text" class="validation" name="state" id="state" placeholder="state" required="required" onblur="validate(this,'state','errorMsgState')" onfocus="undoDiv(this,'errorMsgState','errorMsgStateEmchk')"/>
+			<br><br>
+			<div id="errorMsgStateEmchk" class="validationDivEmchk" style="display: none; color: red;">
+                Please Provide State Name.
+				<br><br>
+            </div>
+			<div id="errorMsgState" class="validationDiv" style="display: none; color: red;">
+                Please Enter valid State Name.
+				<br><br>
+            </div>
+			
+            <label for="zipcode">ZipCode*:</label>
+			<input type="text" class="validation" name="zipcode" id="zipcode" placeholder="xxxxxx" required="required" onblur="validate(this,'zipcode','errorMsgZip')" onfocus="undoDiv(this,'errorMsgZip','errorMsgZipEmchk')"/>
+			<br><br>
+			<div id="errorMsgZipEmchk" class="validationDivEmchk" style="display: none; color: red;">
+                Zip Code is Required.
+				<br><br>
+            </div>
+			<div id="errorMsgZip" class="validationDiv" style="display: none; color: red;">
+                Please Enter valid Zip Code.
+				<br><br>
+            </div>
+             
+
+			<label for="snackType">Dish Ordered:</label>
+  			<select name="Dish" id="snackType" onchange="menuOptions()">
+   				 <option value="Frenchfries">Frenchfries</option>
+    			 <option value="Sandwich">Sandwich</option>
+   				 <option value="Pastry">Pastry</option>
+			    <option value="Pasta">Pasta</option>
+				<option value="Frappe">Frappe</option>
+		    </select>
+			  <br /><br /> 
+			
+			  <label for="Services">Variety:</label>
+			  <div>
+			  <label for="serv01val" id="serv01val" style="width: 90px;"><input type='checkbox' name="service" id="serv01" value="cheese" onclick="serviceCheck()" />cheese</label>
+			  <label for="serv02val" id="serv02val" ><input type='checkbox' name="service" id="serv02" value="periperi" onclick="serviceCheck()" />periperi</label>
+			  </div> 
+			  <br><br> 
+			
+			
+			<div style="display: none;" id="ratingDiv">
+			<label for="Rating">Rating*:</label>
+			<input type="text" name="rating" class="validation" id="rating" placeholder="Rating out of 5" required="required" onblur="validate(this,'rating','errorMsgRating')" onfocus="undoDiv(this,'errorMsgRating','errorMsgRatingEmchk')"/>
+			<br><br> 
+			</div>
+			<div id="errorMsgRatingEmchk" class="validationDivEmchk" style="display: none; color: red;">
+                Rating is Required.
+				<br><br>
+            </div>
+			<div id="errorMsgRating" class="validationDiv" style="display: none; color: red;">
+                Please do provide valid Rating.
+				<br><br>
+            </div>
+
+
+            <label for="howdidyouhear">How did you hear*:</label>
+			<input type='checkbox' name="source" value="facebook" onblur="validateHear()" onfocus="undoDiv(this,'errorMsgHear','errorMsgHear')"/> Facebook
+            <input type='checkbox' name="source" value="google" onblur="validateHear()" onfocus="undoDiv(this,'errorMsgHear','errorMsgHear')"/> Google
+            <input type='checkbox' name="source" value="yelp" onblur="validateHear()" onfocus="undoDiv(this,'errorMsgHear','errorMsgHear')"/> Yelp 
+			<br><br> 
+			<!-- <div id="errorMsgHearEmchk" class="validationDivEmchk" style="display: none; color: red;">
+                Feedback is Required.
+				<br><br>
+            </div> -->
+			<div id="errorMsgHear" style="display: none; color: red;">
+                Please do let us know how did you hear about us.
+				<br><br>
+            </div>
+
+			<label for="comments">Comments*:</label>
+			<textarea name="comments" class="validation" id="comments" placeholder="Your comments" rows="5" cols="25" required="required" onblur="validate(this,'comments','errorMsgComments')" onfocus="undoDiv(this,'errorMsgComments','errorMsgCommentsEmchk')"></textarea>
+			<br><br>
+			<div id="errorMsgCommentsEmchk" class="validationDivEmchk" style="display: none; color: red;">
+                Comments are Required.
+				<br><br>
+            </div>
+			<div id="errorMsgComments" class="validationDiv" style="display: none; color: red;">
+                Please Enter valid Comments.
+				<br><br>
+            </div>
+
+
+			<input type="button" value="submit" onclick="submitFormbtn()">
+			<input type="Reset" onclick="clearDiv()">
+			<br><br>
+		 </form>
+
+
+	 </main>
+
+	 <div id="tablediv">
+		<table id="myblueTable" style="display: none;">
+			<tr>
+				<th>Title</th>
+				<th>First Name</th>
+				<th>Last Name</th>
+				<th>Email Id</th>
+				<th>Phone Number</th>
+				<th>Street Address 1</th>
+				<th>Street Address 2</th>
+				<th>City</th>
+				<th>State</th>
+				<th>Zip Code</th>
+				<th>Dish Ordered</th>
+				<th>Variety</th>
+				<th>Rating</th>
+				<th>How did you hear</th>
+				<th>Comments</th>
+			</tr>
+			<!-- <tr id="mainrow1">
+				<td>test</td>
+				<td>test</td>
+				<td>test</td>
+				<td>test</td>
+				<td>test</td>
+				<td>test</td>
+				<td>test</td>
+				<td>test</td>
+				<td>test</td>
+				<td>test</td>
+				<td>test</td>
+				<td>test</td>
+				<td>test</td>
+				<td>test</td>
+				<td>test</td>
+			</tr> -->
+		</table>
+	
+		<br /><br />
+	 </div>
+ </div>
+ 
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ <script src="script.js"></script>
+ <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+ 
+
+ </body>
+</html>

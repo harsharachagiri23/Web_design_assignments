@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+
+<!-- Also read chapter 9 from slides - Regular Expressions -->
+
+<html>
+
+<head>
+	<title>Table CheckList</title>
+	<link rel="stylesheet" type="text/css" href="table.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+
+<body>
+	<table id="myTable">
+		<tr>
+			<th></th>
+			<th>STUDENT</th>
+			<th>ADVISOR</th>
+			<th>AWARD<br />STATUS</th>
+			<th>SEMESTER</th>
+			<th>TYPE</th>
+			<th>BUDGET<br />#</th>
+			<th>PERCENTAGE</th>
+			<th>DELETE</th>
+			<th>EDIT</th>
+		</tr>
+		<tr id="mainrow1">
+			<td><input class="cbx" type="checkbox" id="cbxid1"
+					onclick="return jschkclk('cbxid1','mainrow1','ddta1','btnDltId1','btnEditId1')" /><br /><br /><img
+					src="down.png" width="25px" onclick="return toggle('ddta1')" /></td>
+			<td>Student 1</td>
+			<td>Teacher 1</td>
+			<td>Approved</td>
+			<td>Fall</td>
+			<td>TA</td>
+			<td>12345</td>
+			<td>100%</td>
+			<td><button class="clsBtnDlt" id="btnDltId1" hidden="true" onclick="DeleteRow(this,'ddta1')">Delete</button>
+			</td>
+			<td><button class="clsBtnEdit" id="btnEditId1" hidden="true" onclick="EditRow(1)">Edit</button></td>
+		</tr>
+		<tr class="dropDownTextArea" id="ddta1">
+			<td colspan="10">
+				Advisor:<br /><br />
+				Award Details<br />
+				Summer 1-2014(TA)<br />
+				Budget Number: <br />
+				Tuition Number: <br />
+				Comments:<br /><br /><br />
+				Award Status:<br /><br /><br />
+			</td>
+		</tr>
+		<tr id="mainrow2">
+			<td><input class="checkboxcolumn" type="checkbox" id="cbxid2"
+					onclick="return jschkclk('cbxid2','mainrow2','ddta2','btnDltId2','btnEditId2')" /><br /><br /><img
+					src="down.png" width="25px" onclick="return toggle('ddta2')" /></td>
+			<td>Student 2</td>
+			<td>Teacher 2</td>
+			<td>Approved</td>
+			<td>Fall</td>
+			<td>TA</td>
+			<td>23456</td>
+			<td>100%</td>
+			<td><button class="clsBtnDlt" id="btnDltId2" hidden="true" onclick="DeleteRow(this,'ddta2')">Delete</button>
+			</td>
+			<td><button class="clsBtnEdit" id="btnEditId2" hidden="true" onclick="EditRow(2)">Edit</button></td>
+		</tr>
+		<tr class="dropDownTextArea" id="ddta2">
+			<td colspan="10">
+				Advisor:<br /><br />
+				Award Details<br />
+				Summer 1-2014(TA)<br />
+				Budget Number: <br />
+				Tuition Number: <br />
+				Comments:<br /><br /><br />
+				Award Status:<br /><br /><br />
+			</td>
+		</tr>
+		<tr id="mainrow3">
+			<td><input class="checkboxcolumn" id="cbxid3" type="checkbox"
+					onclick="return jschkclk('cbxid3','mainrow3','ddta3','btnDltId3','btnEditId3')" /><br /><br /><img
+					src="down.png" width="25px" onclick="return toggle('ddta3')" /></td>
+			<td>Student 3</td>
+			<td>Teacher 3</td>
+			<td>Approved</td>
+			<td>Fall</td>
+			<td>TA</td>
+			<td>34567</td>
+			<td>100%</td>
+			<td><button class="clsBtnDlt" id="btnDltId3" hidden="true" onclick="DeleteRow(this,'ddta3')">Delete</button>
+			</td>
+			<td><button class="clsBtnEdit" id="btnEditId3" hidden="true" onclick="EditRow(3)">Edit</button></td>
+		</tr>
+		<tr class="dropDownTextArea" id="ddta3">
+			<td colspan="10">
+				Advisor:<br /><br />
+				Award Details<br />
+				Summer 1-2014(TA)<br />
+				Budget Number: <br />
+				Tuition Number: <br />
+				Comments:<br /><br /><br />
+				Award Status:<br /><br /><br />
+			</td>
+		</tr>
+	</table>
+
+	<br /><br />
+
+	<button id="button">SUBMIT SELECTED AWARDS</button>
+	<button id="add">Add New Student</button>
+
+	<nav class="socialmediaicons"></nav>
+	<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+	<script src="script.js"></script>
+
+</body>
+
+</html>
